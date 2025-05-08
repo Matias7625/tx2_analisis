@@ -17,6 +17,7 @@ st.subheader("Te cuidado con lo que dices si no le gusta a la calac te va a deci
 with st.sidebar:
                st.subheader("Polaridad y Subjetividad")
                ("""
+                La calaca te juzgara por los siguientes valores ten cuidado....
                 Polaridad: Indica si el sentimiento expresado en el texto es positivo, negativo o neutral. 
                 Su valor oscila entre -1 (muy negativo) y 1 (muy positivo), con 0 representando un sentimiento neutral.
                 
@@ -41,11 +42,19 @@ with st.expander('Preparte para ser juzgado en un texto'):
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
         if x >= 0.5:
-            st.write( 'Le agradaste a la calasa 😊')
+            st.write( """
+            'Le agradaste a la calasa 😊'
+            'Y mira te va invitar a tomar algo'
+            """)
+            st.image("skull-hand-with-beer-vector.jpg")
         elif x <= -0.5:
-            st.write( 'Enojate a la calaca... 😔')
+            st.write( """
+                'Enojate a la calaca... 😔'
+                'Pinche desgraciado ya te las veras comingo cuando te vea'
+                """)
+            st.image("skeleton-meme-skeleton.gif")
         else:
-            st.write( 'La calaca esta neutral 😐')
+            st.write( 'La calaca esta neutral 😐 eso no suele pasar.....')
 
 with st.expander('Traducerlo al idioma de la calaca'):
        text2 = st.text_area('Escribe por favor: ',key='4')
