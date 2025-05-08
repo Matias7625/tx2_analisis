@@ -1,10 +1,17 @@
 import streamlit as st
 from textblob import TextBlob
 from googletrans import Translator
-
+image = Image.open("345c9c23f8ac9ba092aa634edea5b83f.jpg")
 translator = Translator()
-st.title('¡Estas siendo juzgado por la calaca!')
+st.markdown(
+    """
+    <h1 style='text-align: center; color: red;'>¡Estas siendo juzgado por la calaca!.</h1>
+   
+    """,
+    unsafe_allow_html=True
+)
 
+st.image(image, width=350)
 st.subheader("Te cuidado con lo que dices si no le gusta a la calac te va a decir cosas feas")
 with st.sidebar:
                st.subheader("Polaridad y Subjetividad")
@@ -19,7 +26,7 @@ with st.sidebar:
                ) 
 
 
-with st.expander('Analizar Polaridad y Subjetividad en un texto'):
+with st.expander('Preparte para ser juzgado en un texto'):
     text1 = st.text_area('Escribe por favor: ')
     if text1:
 
@@ -39,7 +46,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         else:
             st.write( 'La calaca esta neutral 😐')
 
-with st.expander('Corrección en inglés'):
+with st.expander('Traducerlo al idioma de la calaca'):
        text2 = st.text_area('Escribe por favor: ',key='4')
        if text2:
           blob2=TextBlob(text2)
