@@ -1,6 +1,7 @@
 import streamlit as st
 from textblob import TextBlob
 from googletrans import Translator
+from PIL import Image
 image = Image.open("345c9c23f8ac9ba092aa634edea5b83f.jpg")
 translator = Translator()
 st.markdown(
