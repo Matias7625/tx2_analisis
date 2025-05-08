@@ -3,9 +3,9 @@ from textblob import TextBlob
 from googletrans import Translator
 
 translator = Translator()
-st.title('Uso de textblob')
+st.title('¡Estas siendo juzgado por la calaca!')
 
-st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
+st.subheader("Te cuidado con lo que dices si no le gusta a la calac te va a decir cosas feas")
 with st.sidebar:
                st.subheader("Polaridad y Subjetividad")
                ("""
@@ -33,11 +33,11 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
         if x >= 0.5:
-            st.write( 'Es un sentimiento Positivo 😊')
+            st.write( 'Le agradaste a la calasa 😊')
         elif x <= -0.5:
-            st.write( 'Es un sentimiento Negativo 😔')
+            st.write( 'Enojate a la calaca... 😔')
         else:
-            st.write( 'Es un sentimiento Neutral 😐')
+            st.write( 'La calaca esta neutral 😐')
 
 with st.expander('Corrección en inglés'):
        text2 = st.text_area('Escribe por favor: ',key='4')
